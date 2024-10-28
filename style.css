@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #111;
+}
+button {
+    background-color: #000000; /* اللون الأساسي */
+    border: none; /* بدون حدود */
+    color: white; /* لون النص */
+    padding: 15px 20px; /* padding من الأعلى والأسفل، ومن اليمين واليسار */
+    text-align: center; /* توسيط النص */
+    text-decoration: none; /* بدون خط تحت النص */
+    display: inline-block; /* لجعل الأزرار بجانب بعضها */
+    font-size: 16px; /* حجم الخط */
+    margin: 10px; /* مسافة بين الأزرار */
+    transition: background-color 0.5s ease, transform 0.3s ease; /* تأثير الانتقال */
+    border-radius: 5px; /* زوايا مدورة */
+    cursor: pointer; /* تغيير المؤشر عند تمرير الماوس */
+}
+
+
+
+button:hover {
+    background-color:   rgba(0, 255, 255, 0.814);
+    /* لون الخلفية عند المرور بالماوس */
+    transform: scale(1.05); /* زيادة حجم الزر قليلاً */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1{
+    color: rgba(0, 255, 255, 0.814);
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease; /* تأثير الانتقال */
+}
+
+
+ img:hover {
+    background-color: #197fd8; /* لون الخلفية عند المرور بالماوس */
+    transform: scale(1.05); /* زيادة حجم الزر قليلاً */
+}
+
+img.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 80%; /* يمكنك تعديل الحجم هنا */
+    height: auto;
+}
+
+.close-btn,
+.zoom-in-btn,
+.zoom-out-btn,
+.prev-btn,
+.next-btn {
+    position: fixed;
+    background-color: #1111;
+    color: rgb(162, 14, 14);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-btn {
+    top: 20px;
+    right: 20px;
+}
+
+.zoom-in-btn {
+    top: 20px;
+    right: 100px;
+}
+
+.zoom-out-btn {
+    top: 20px;
+    right: 180px;
+}
+
+.prev-btn {
+    top: 50%;
+    left: 20px;
+}
+
+.next-btn {
+    top: 50%;
+    right: 20px;
+}
+
+/* أنماط عامة */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* عرض المعرض بشكل مرن */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* نمط الزر */
+button {
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* الأنماط المخصصة للشاشات الصغيرة */
+@media (max-width: 600px) {
+    img {
+        width: 100%; /* تأكد من أن الصور تأخذ 100% من عرض الشاشة */
+        max-width: 200px; /* الحد الأقصى لعرض الصورة */
+    }
+
+    button {
+        padding: 10px; /* تقليل حجم الأزرار على الشاشات الصغيرة */
+        font-size: 14px; /* تقليل حجم الخط */
+    }
+}
